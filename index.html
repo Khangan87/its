@@ -1,14 +1,160 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>APK Software Solutions — Secure. Scalable. Seamless.</title>
+  <meta name="description" content="APK Software Solutions — IT & software services: web apps, mobile apps, cloud, DevOps, maintenance."/>
+  <link rel="icon" href="/assets/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071021 0%, #071726 60%);color:#e6eef6}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;background:linear-gradient(135deg,#0ea5a9,#3b82f6);display:grid;place-items:center;border-radius:10px;font-weight:700;color:#032;box-shadow:0 6px 18px rgba(3,7,18,0.6)}
+    nav{display:flex;gap:18px;align-items:center}
+    .cta{background:transparent;border:1px solid rgba(230,238,246,0.12);padding:8px 14px;border-radius:10px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:48px 0}
+    .hero h1{font-size:32px;margin:0 0 12px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,rgba(6,182,212,0.12),rgba(59,130,246,0.12));color:var(--accent);font-weight:600}
+    .lead{color:var(--muted);line-height:1.6}
+    .hero .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* Services */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+    .service{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+    .service h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+
+    /* Portfolio & contact */
+    .portfolio{margin-top:36px}
+    .portfolio .items{display:flex;gap:12px;flex-wrap:wrap}
+    .pitem{min-width:200px;padding:14px;border-radius:10px;background:rgba(255,255,255,0.02)}
+
+    footer{margin-top:48px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+    }
+    /* Small helpers */
+    .button{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#042d33;font-weight:600;text-decoration:none}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+  </style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- Replace with your SVG/png logo at /assets/logo.png -->
+        <div class="logo" aria-hidden>APK</div>
+        <div>
+          <div style="font-weight:700">APK Software Solutions</div>
+          <div class="muted" style="font-size:13px">Secure. Scalable. Seamless.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="tel:"></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <span class="tag">IT & Software Services</span>
+          <h1>We build reliable web & mobile applications for businesses.</h1>
+          <p class="lead">From product design and full-stack development to cloud migration and DevOps — we deliver secure, scalable, and seamless digital solutions that accelerate growth.</p>
+          <p style="margin-top:18px"><a class="button" href="#contact">Get a quote</a></p>
+
+          <div class="grid">
+            <div class="service">
+              <h3>Web Development</h3>
+              <div class="muted">React, Next.js, Node.js, APIs, CMS integrations</div>
+            </div>
+            <div class="service">
+              <h3>Mobile Apps</h3>
+              <div class="muted">Flutter & native apps, cross-platform solutions</div>
+            </div>
+            <div class="service">
+              <h3>Cloud & DevOps</h3>
+              <div class="muted">AWS/GCP, CI/CD, monitoring, autoscaling</div>
+            </div>
+            <div class="service">
+              <h3>Maintenance & Support</h3>
+              <div class="muted">SLA-based support, security & performance tuning</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Quick contact</h3>
+          <p class="muted">Tell us about your project — estimated timeline and budget (optional).</p>
+          <!-- This contact form is a static form; replace action with your server or use a service (Formspree, Netlify Forms, etc.) -->
+          <form id="contact" action="mailto:hello@apksoftwaresolutions.com" method="post" enctype="text/plain">
+            <label class="muted">Name</label>
+            <input type="text" name="name" required placeholder="Your name">
+            <label class="muted">Email</label>
+            <input type="email" name="email" required placeholder="you@company.com">
+            <label class="muted">Message</label>
+            <textarea name="message" rows="4" placeholder="Brief description"></textarea>
+            <div style="margin-top:12px"><button type="submit" class="button">Send message</button></div>
+          </form>
+
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+            <div><strong>Phone:</strong>  </div>
+            <div><strong>Email:</strong> info@apksoftwaresolutions.com</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="portfolio">
+        <h2>Selected Work</h2>
+        <div class="items">
+          <div class="pitem">
+            <strong>Inventory Management App</strong>
+            <div class="muted">React + Node + PostgreSQL — Real-time stock tracking, barcode scanning</div>
+          </div>
+          <div class="pitem">
+            <strong>On-demand Service Platform</strong>
+            <div class="muted">Flutter mobile apps + Firebase — Booking, payments, provider dashboard</div>
+          </div>
+          <div class="pitem">
+            <strong>Corporate Website & CMS</strong>
+            <div class="muted">SEO-friendly marketing site, headless CMS</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:36px">
+        <h2>About Us</h2>
+        <p class="muted">We are a team of engineers and product designers focused on building dependable software for businesses of all sizes. Located in pune, India — available globally.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> APK Software Solutions</div>
+      <div class="muted">Made with care • Secure • Scalable • Seamless</div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Progressive enhancement: show nav on wide screens, mobile nav could be added here.
+  </script>
 </body>
 </html>
